@@ -3,12 +3,23 @@
 namespace WYLJUS002{
 
     perceptron::perceptron(const int &dimension){
-        int idim = dimension;
-        double w0 = 0;
-        w = std::vector<double>(idim);
-        double n = 0.6; //default learning rate???
-        x = std::vector<double>(idim); //inputs
-        computed = false;
+        idim = dimension;
+        w0 = 0; //offset
+        n = 0.6; //default learning rate???
+        theta = 0; //threshold
+        w = std::vector<double>(idim); //weights
+        
+    }
+
+    int perceptron::compute(std::vector<double> x_inputs){
+        double summation = w0;
+        for (int i = 0; i < idim; i++){
+           summation += x_inputs[i]*w[i];
+        }
+        
+        if (summation > theta)
+            return 1;
+        return 0;
     }
 
     void perceptron::train(const int &i, const int &expected){
