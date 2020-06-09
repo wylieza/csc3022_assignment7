@@ -4,6 +4,10 @@ driver: driver.cpp perceptron.o
 perceptron.o: perceptron.cpp perceptron.hpp
 	g++ -c perceptron.cpp -o perceptron.o -std=c++11
 
+debug:
+	g++ driver.cpp perceptron.cpp -o driver -std=c++11 -g
+	gdb driver
+
 clean:
 	rm -rf driver perceptron.o
 
