@@ -7,7 +7,7 @@ void print_compute(std::vector<double> x_inputs, perceptron &pcp){
     std::cout << "Input of " << x_inputs[0] << ", " << x_inputs[1] << " => " << result << std::endl; 
 }
 
-int main(int argc , const char* argv){
+int main(int argc , const char** argv){
     std::vector<std::vector<std::vector<double>>> training_xor = {{{0,0},{0}}, {{0, 1},{1}}, {{1,0},{1}}, {{1,1},{0}}};
     std::vector<std::vector<std::vector<double>>> training_and = {{{0,0},{0}}, {{0, 1},{1}}, {{1,0},{1}}, {{1,1},{0}}};
     std::vector<std::vector<std::vector<double>>> training_or = {{{0,0},{0}}, {{0, 1},{1}}, {{1,0},{1}}, {{1,1},{0}}};
