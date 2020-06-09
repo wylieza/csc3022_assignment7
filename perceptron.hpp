@@ -19,11 +19,9 @@ class perceptron{
 
     perceptron(const int &dimension);
 
-    void train(const int &i, const int &expected);
-    void train(const int &i, const int &expected, const double &xi);
-
     int compute(std::vector<double> x_inputs);
 
+    void train(std::vector<double> x_inputs, const int &expected);
 
 };
 
