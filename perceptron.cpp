@@ -25,6 +25,7 @@ namespace WYLJUS002{
             return 1;
         return 0;
     }
+    
 
     void perceptron::train(std::vector<double> x_inputs, const int &expected){
         int output = this->compute(x_inputs);

@@ -31,41 +31,53 @@ int main(int argc , const char** argv){
 
     int max_iterations = 10000;
 
-    std::vector<double> x = {0, 1};
-    std::cout << "stefaaann my boi... watch dis space -> " << check_nand(x, 1) << '\n';
+    //Training variables
+    int points = 0;
+    int i;
 
     //Train AND Gate
-
-    for(int i = 0; i < max_iterations; i++){
-        and_perceptron.train(training_and[i%4][0], (int) training_and[i%4][1][0]);
+    for(i = 0; i < max_iterations && points < 4; i++){
+        if (check_and(training_and[i%4][0], and_perceptron.compute(training_and[i%4][0])))
+            points++;
+        else
+            points = 0;  
+        and_perceptron.train(training_and[i%4][0], (int) training_and[i%4][1][0]);              
     }
 
-    std::cout << "and training complete\n";
-
+    std::cout << "AND - training complete in " << i << " iterations\n";
     for(int i = 0; i < 4; i++){
         print_compute(training_and[i][0], and_perceptron);
     }
 
 
-    //Or gate
-    for(int i = 0; i < 4*1000; i++){
-        or_perceptron.train(training_or[i%4][0], (int) training_or[i%4][1][0]);
+    //Train OR Gate
+    points = 0;
+    for(i = 0; i < max_iterations && points < 4; i++){
+        if (check_or(training_or[i%4][0], or_perceptron.compute(training_or[i%4][0])))
+            points++;
+        else
+            points = 0; 
+        or_perceptron.train(training_or[i%4][0], (int) training_or[i%4][1][0]); 
     }
 
-    std::cout << "or training complete\n";
-
+    std::cout << "OR - training complete in " << i << " iterations\n";
     for(int i = 0; i < 4; i++){
         print_compute(training_or[i][0], or_perceptron);
     }
 
-    //NAND gate
-    nand_perceptron.theta = -1;
-    for(int i = 0; i < 4*1000; i++){
-        nand_perceptron.train(training_nand[i%4][0], (int) training_nand[i%4][1][0]);
+
+    //Train NAND Gate
+    points = 0;
+    nand_perceptron.theta = -0.1;
+    for(i = 0; i < max_iterations && points < 4; i++){
+        if (check_nand(training_nand[i%4][0], nand_perceptron.compute(training_nand[i%4][0])))
+            points++;
+        else
+            points = 0; 
+        nand_perceptron.train(training_nand[i%4][0], (int) training_nand[i%4][1][0]);       
     }
 
-    std::cout << "nand training complete\n";
-
+    std::cout << "NAND - training complete in " << i << " iterations\n";
     for(int i = 0; i < 4; i++){
         print_compute(training_nand[i][0], nand_perceptron);
     }
