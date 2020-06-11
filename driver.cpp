@@ -31,6 +31,17 @@ bool check_weights(std::vector<double> &w_old, std::vector<double> &w_new){
     return true;
 }
 
+int xor_gate(std::vector<double> &inputs, perceptron &andp, perceptron &orp, perceptron &nandp){
+    return andp.compute({(double) orp.compute(inputs), (double) nandp.compute(inputs)});    
+}
+
+void print_xor(perceptron &andp, perceptron &orp, perceptron &nandp){
+    std::vector<std::vector<double>> xor_truths = {{0,0}, {0, 1}, {1,0}, {1,1}};
+    for (int i = 0; i < 4; ++i){
+        std::cout << "Input of " << xor_truths[i][0] << ", " << xor_truths[i][1] << " => " << xor_gate(xor_truths[i], andp, orp, nandp) << std::endl; 
+    }
+}
+
 int main(int argc , const char** argv){
     std::vector<std::vector<std::vector<double>>> training_and = {{{0,0},{0}}, {{0, 1},{0}}, {{1,0},{0}}, {{1,1},{1}}};
     std::vector<std::vector<std::vector<double>>> training_or = {{{0,0},{0}}, {{0, 1},{1}}, {{1,0},{1}}, {{1,1},{1}}};
@@ -102,5 +113,9 @@ int main(int argc , const char** argv){
     for(int i = 0; i < 4; i++){
         print_compute(training_nand[i][0], nand_perceptron);
     }
+
+    std::cout << "XOR - Operation now learned\n";
+
+    print_xor(and_perceptron, or_perceptron, nand_perceptron);
 
 }
