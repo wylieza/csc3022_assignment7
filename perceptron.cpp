@@ -6,13 +6,13 @@ namespace WYLJUS002{
         idim = dimension;
         w0 = 0; //offset
         n = 0.2; //default learning rate???
-        theta = 1.5; //threshold
+        theta = 0.5; //threshold
         w = std::vector<double>(idim); //weights
 
+        srand(time(NULL));
         for (int wi = 0; wi < w.size(); ++wi){
-            w[wi] = (rand() % 100)/100.0;
+            w[wi] = (rand() % 1000)/1000.0;
         }
-        
     }
 
     int perceptron::compute(std::vector<double> x_inputs){
@@ -38,6 +38,10 @@ namespace WYLJUS002{
         }
     }
 
-    
+    std::vector<double> perceptron::get_weights(){
+        std::vector<double> weights(w);
+        weights.insert(weights.begin(), w0); //This is inefficient I know, but there is no time to restructure.
+        return weights;
+    }
 
 }

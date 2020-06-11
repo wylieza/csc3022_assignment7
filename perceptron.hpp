@@ -4,7 +4,8 @@
 //Includes
 #include <vector>
 #include <iostream>
-//#include <cstdlib>
+#include <cmath>
+#include <ctime>
 
 namespace WYLJUS002{
 
@@ -23,6 +24,8 @@ class perceptron{
     int compute(std::vector<double> x_inputs);
 
     void train(std::vector<double> x_inputs, const int &expected);
+
+    std::vector<double> get_weights();
 
 };
 
