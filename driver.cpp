@@ -20,7 +20,6 @@ bool check_nand(std::vector<double> &x_inputs, const int &result){
 }
 
 int main(int argc , const char** argv){
-    std::vector<std::vector<std::vector<double>>> training_xor = {{{0,0},{0}}, {{0, 1},{1}}, {{1,0},{1}}, {{1,1},{0}}};
     std::vector<std::vector<std::vector<double>>> training_and = {{{0,0},{0}}, {{0, 1},{0}}, {{1,0},{0}}, {{1,1},{1}}};
     std::vector<std::vector<std::vector<double>>> training_or = {{{0,0},{0}}, {{0, 1},{1}}, {{1,0},{1}}, {{1,1},{1}}};
     std::vector<std::vector<std::vector<double>>> training_nand = {{{0,0},{1}}, {{0, 1},{1}}, {{1,0},{1}}, {{1,1},{0}}};
@@ -68,7 +67,7 @@ int main(int argc , const char** argv){
 
     //Train NAND Gate
     points = 0;
-    nand_perceptron.theta = -0.1;
+    //nand_perceptron.theta = -0.1;
     for(i = 0; i < max_iterations && points < 4; i++){
         if (check_nand(training_nand[i%4][0], nand_perceptron.compute(training_nand[i%4][0])))
             points++;
