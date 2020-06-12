@@ -4,3 +4,4 @@ vscode
 driver
 perceptron.o
 xor_driver
+ann_driver
