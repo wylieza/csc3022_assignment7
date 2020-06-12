@@ -26,5 +26,28 @@ class neuron{
 }
 
 
+namespace WYLJUS002{
+
+    neuron::neuron(const int &dimension){
+        idim = dimension;
+        w0 = 0; //offset
+        w = std::vector<double>(idim); //weights
+    }
+
+    double neuron::sigmoid(double y){
+        return 1/(1.0+exp(-y));
+    }
+
+    
+
+
+
+
+}
+
+
+
+
+
 #endif
 
