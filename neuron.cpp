@@ -17,7 +17,7 @@ class neuron{
 
     neuron(const int &dimension);
 
-    int compute(std::vector<double> x_inputs);
+    double compute(std::vector<double> x_inputs);
 
     double sigmoid(double y);
 
@@ -35,15 +35,14 @@ namespace WYLJUS002{
     }
 
     double neuron::sigmoid(double y){
-        return 1/(1.0+exp(-y));
+        return 1/(1.0 + exp(-y));
     }
 
-    int neuron::compute(std::vector<double> x_inputs){
+    double neuron::compute(std::vector<double> x_inputs){
         double summation = w0;
         for (int i = 0; i < idim; i++){
            summation += x_inputs[i]*w[i];
         }
-
         return sigmoid(summation);
     }
 

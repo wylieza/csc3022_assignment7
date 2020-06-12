@@ -18,6 +18,10 @@ int main(int argc , const char** argv){
     hidden_2.w0 = -0.3;
 
     //Find the hidden layer neuron values
+    std::cout << "Hidden layer neuron values:\n";
+    std::cout << "Hidden Neuron 1 -> " << hidden_1.compute(x_inputs) << '\n';
+    std::cout << "Hidden Neuron 2 -> " << hidden_2.compute(x_inputs) << '\n';
+
     
 
 
