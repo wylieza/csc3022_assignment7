@@ -2,9 +2,12 @@
 
 
 --- Instructions for use ---
+This git repository contains code to answer sections 1 and 2 from assignment 7.
+The answers are provided in a seperate text file called 'answers.txt'. Running
+the program will produce the same answers, displayed in the terminal.
 
 
-The application is executed by typeing "make run"
+The application is executed by typeing "make run" (which launches both applications)
 
 -- Program Arguments --
 
@@ -19,15 +22,30 @@ ________________________________________________________________________________
 >> Standard Commands <<
 make                            -> Compile source code
 make clean                      -> Remove binaries and results file
-make run                       -> Runs 
+make run                        -> Runs both applications
+make runxor                     -> Runs section 1's application
+make run                        -> Runs section 2's application
 _________________________________________________________________________________________________
 
-Note: The application can also be executed in the terminal using the usual ./
+Note: The application can also be executed in the terminal using the usual ./<binary name>
 
 
 --- Source Code Description ---
->> X.cpp <<
-XXX
+>> xor_drive.cpp <<
+This is the driver class for the xor perceptron based logic gate. (Answers section 1)
+
+>> perceptron.hpp <<
+This is the header code for the perceptron class.
+
+>> perceptron.cpp <<
+This is the source code for the perceptron class, containing the implementation.
+
+>> ann_driver.cpp <<
+This is the driver class for the neuron based ANN. (Answers section 2)
+
+>> neuron.cpp <<
+This is the neuron class and contains both the definition and implemention to decrease the
+number of files being submitted for such a specific implementation.
 
 
 --- Student Details ---
