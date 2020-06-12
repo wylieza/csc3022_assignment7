@@ -38,4 +38,14 @@ Input of 1, 1 => 0
 Section 2
 -----------
 
+3) Hidden layer neuron values:
+Hidden Neuron 1 -> 0.763145
+Hidden Neuron 2 -> 0.802184
 
+
+4) Output neuron value:
+Output Neuron -> 0.752632
+
+
+5) Mean sqaured error:
+MSE = 0.15416
