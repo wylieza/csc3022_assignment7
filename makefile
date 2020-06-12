@@ -1,15 +1,15 @@
-driver: driver.cpp perceptron.o
-	g++ driver.cpp perceptron.o -o driver -std=c++11
+xor_driver: xor_driver.cpp perceptron.o
+	g++ xor_driver.cpp perceptron.o -o xor_driver -std=c++11
 
 perceptron.o: perceptron.cpp perceptron.hpp
 	g++ -c perceptron.cpp -o perceptron.o -std=c++11
 
 debug:
-	g++ driver.cpp perceptron.cpp -o driver -std=c++11 -g
-	gdb driver
+	g++ xor_driver.cpp perceptron.cpp -o xor_driver -std=c++11 -g
+	gdb xor_driver
 
 clean:
-	rm -rf driver perceptron.o
+	rm -rf xor_driver perceptron.o
 
-run: driver
-	./driver
+runxor: xor_driver
+	./xor_driver
