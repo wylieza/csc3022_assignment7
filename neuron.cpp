@@ -38,7 +38,14 @@ namespace WYLJUS002{
         return 1/(1.0+exp(-y));
     }
 
-    
+    int neuron::compute(std::vector<double> x_inputs){
+        double summation = w0;
+        for (int i = 0; i < idim; i++){
+           summation += x_inputs[i]*w[i];
+        }
+
+        return sigmoid(summation);
+    }
 
 
 
