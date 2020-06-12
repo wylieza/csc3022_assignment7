@@ -1,0 +1,41 @@
+Assignment 7 [WYLJUS002]
+
+----------------------------------------------------------------------------------------------
+Section 1
+-----------
+1) Minimun number of perceptron required is 3.
+
+This is because the XOR gate can be composed of 3 basic logic gates which are each
+linearly-seperable problems.
+
+
+2) Total number of training examples required was 12. Equally distributed between the three
+perceptrons. The list of training examples is given below in the form x1, x2 => y. Where y is
+the expected output. The training examples where iteratively looped through to train the
+individual perceptrons and the exact number of iterations varied depending on the randomly
+assigned initial weights.
+
+AND perceptron
+Input of 0, 0 => 0
+Input of 0, 1 => 0
+Input of 1, 0 => 0
+Input of 1, 1 => 1
+
+OR perceptron
+Input of 0, 0 => 0
+Input of 0, 1 => 1
+Input of 1, 0 => 1
+Input of 1, 1 => 1
+
+NAND perceptron
+Input of 0, 0 => 1
+Input of 0, 1 => 1
+Input of 1, 0 => 1
+Input of 1, 1 => 0
+
+
+----------------------------------------------------------------------------------------------
+Section 2
+-----------
+
+

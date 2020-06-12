@@ -7,20 +7,6 @@ void print_compute(std::vector<double> &x_inputs, perceptron &pcp){
     std::cout << "Input of " << x_inputs[0] << ", " << x_inputs[1] << " => " << result << std::endl; 
 }
 
-/*
-bool check_and(std::vector<double> &x_inputs, const int &result){
-    return ((int)x_inputs[0] & (int)x_inputs[1]) == result;
-}
-
-bool check_or(std::vector<double> &x_inputs, const int &result){
-    return ((int)x_inputs[0] | (int)x_inputs[1]) == result;
-}
-
-bool check_nand(std::vector<double> &x_inputs, const int &result){
-    return !((int)x_inputs[0] & (int)x_inputs[1]) == result;
-}
-*/
-
 bool check_weights(std::vector<double> &w_old, std::vector<double> &w_new){
     double epsilon = 1e-10;
     for (int i = 0; i < w_old.size(); ++i){
