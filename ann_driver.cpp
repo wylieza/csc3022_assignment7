@@ -30,7 +30,10 @@ int main(int argc , const char** argv){
     std::cout << "Output Neuron -> " << output.compute({hidden_1.compute(x_inputs), hidden_2.compute(x_inputs)}) << '\n';
 
 
-    
+    //Find the mean squared error of the input x
+    std::cout << "Question 5) Mean sqaured error:\n";
+    double y_computed = output.compute({hidden_1.compute(x_inputs), hidden_2.compute(x_inputs)});
+    std::cout << "MSE = " << pow(y_expected - y_computed, 2) << '\n';
 
     
 
