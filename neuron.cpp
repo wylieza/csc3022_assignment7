@@ -30,7 +30,7 @@ namespace WYLJUS002{
 
     neuron::neuron(const int &dimension){
         idim = dimension;
-        w0 = 0; //offset
+        w0 = 0;
         w = std::vector<double>(idim); //weights
     }
 
