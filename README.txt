@@ -23,8 +23,8 @@ ________________________________________________________________________________
 make                            -> Compile source code
 make clean                      -> Remove binaries and results file
 make run                        -> Runs both applications
-make runxor                     -> Runs section 1's application
-make run                        -> Runs section 2's application
+make runxor                     -> Runs only section 1's application
+make runann                     -> Runs only section 2's application
 _________________________________________________________________________________________________
 
 Note: The application can also be executed in the terminal using the usual ./<binary name>
